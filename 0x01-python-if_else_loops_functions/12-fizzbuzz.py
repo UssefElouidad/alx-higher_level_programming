@@ -9,4 +9,3 @@ def fizzbuzz():
             print("buzz", end=" ")
         else:
             print(num, end=" ")
-    print("{}".format(num))
