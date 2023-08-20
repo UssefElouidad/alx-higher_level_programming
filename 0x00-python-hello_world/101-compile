@@ -1,3 +1,2 @@
-import subprocess
-import os
-subprocess.run(['python3', '-m', 'py_compile', main.py])
+#!/bin/bash
+python3 -m compileall -b $PYFILE
