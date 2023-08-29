@@ -10,4 +10,4 @@ class Square:
         Args:
             None
         """
-            pass
+        pass
