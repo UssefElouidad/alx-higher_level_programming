@@ -11,6 +11,7 @@ class Square:
             size(int) the size to assign to the square.
         """
         self._Square__size = size
+
     def get_size(self):
         """
         gets the size of the square
