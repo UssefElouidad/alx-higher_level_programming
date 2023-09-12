@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ defines a text function"""
+
+
 def append_write(filename="", text=""):
     """  a function that appends a string
     at the end of a text file
