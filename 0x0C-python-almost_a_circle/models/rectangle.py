@@ -55,4 +55,5 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= o")
         self.__y = value
-
+    def area(self):
+        return self.width * self.height
