@@ -29,9 +29,9 @@ class Square(Rectangle):
         num_args = len(args)
 
         if num_args >= 1:
-            self.id = arg[0]
+            self.id = args[0]
         if num_args >= 2:
-            self.size = args[1]
+            self.width = args[1]
         if num_args >= 3:
             self.x = args[2]
         if num_args >= 4:
