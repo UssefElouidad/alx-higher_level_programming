@@ -14,12 +14,12 @@ class Rectangle(Base):
         self.y = y
 
     @property
-    """ getter for width"""
     def width(self):
+        """Getter method for width"""
         return self.__width
     @width.setter
-    """ setter for width"""
     def width(self, value):
+        """ setter for width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -27,12 +27,12 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    """ getter for height"""
     def height(self):
+        """ getter for height"""
         return self.__height
     @height.setter
-    """ setter for height"""
     def height(self, value):
+        """ setter for height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -40,12 +40,12 @@ class Rectangle(Base):
         self.__height = value
 
     @property
-    """ getter for x """
     def x(self):
+        """ getter for x"""
         return self.__x
     @x.setter
-    """setter for x"""
     def x(self, value):
+        """setter for x"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -53,12 +53,12 @@ class Rectangle(Base):
         self.__x = value
 
     @property
-    """ getter for y"""
     def y(self):
+        """ getter for y"""
         return self.__y
     @y.setter
-    """ setter for y"""
     def y(self, value):
+        """ setter for y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -74,3 +74,16 @@ class Rectangle(Base):
             print(' ' * self.x + '#' * self.width)
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    def update(self, *args):
+        """ update the attributes of the rectangle with arguments"""
+        num_arg = len(args)
+        if num_arg >= 1:
+            self.id = args[0]
+        if num_arg >= 2:
+            self.width = args[1]
+        if num_arg >= 3:
+            self.height = args[2]
+        if num_arg >= 4:
+            self.__x = args[3]
+        if num_arg >= 5:
+            self.__y = args[4]
