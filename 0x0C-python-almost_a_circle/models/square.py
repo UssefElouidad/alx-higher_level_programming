@@ -45,13 +45,12 @@ class Square(Rectangle):
         """Return a string representation of the Square instance."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
-    #def to_dictionary(self):
+    def to_dictionary(self):
         """ a public method that returns the dictionary
-        representation of a Rectangle"""
+        representation of a square"""
         return {
             "id": self.id,
-            "width": self.width,
-            "heghit": self.heghit,
+            "size": self.size,
             "x": self.x,
             "y": self.y,
             }
