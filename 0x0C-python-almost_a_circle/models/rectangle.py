@@ -65,6 +65,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= o")
         self.__y = value
     def area(self):
+        """ a public method that returns the area value of the Rectangle instance."""
         return self.width * self.height
     def display(self):
         """ Return a string representation of the rectangle using # characters """
