@@ -3,6 +3,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Rectangle class """
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -15,10 +16,13 @@ class Rectangle(Base):
 
     @property
     def width(self):
+
         """Getter method for width"""
         return self.__width
+
     @width.setter
     def width(self, value):
+
         """ setter for width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -28,10 +32,13 @@ class Rectangle(Base):
 
     @property
     def height(self):
+
         """ getter for height"""
         return self.__height
+
     @height.setter
     def height(self, value):
+
         """ setter for height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -41,10 +48,13 @@ class Rectangle(Base):
 
     @property
     def x(self):
+
         """ getter for x"""
         return self.__x
+
     @x.setter
     def x(self, value):
+
         """setter for x"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
@@ -54,28 +64,42 @@ class Rectangle(Base):
 
     @property
     def y(self):
+
         """ getter for y"""
         return self.__y
+
     @y.setter
     def y(self, value):
+
         """ setter for y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= o")
         self.__y = value
+
     def area(self):
-        """ a public method that returns the area value of the Rectangle instance."""
+
+        """ a public method that returns the area value
+        of the Rectangle instance."""
         return self.width * self.height
+
     def display(self):
-        """ Return a string representation of the rectangle using # characters """
+
+        """ Return a string representation of the rectangle using #
+        characters """
         for _ in range(self.y):
             print()
         for _ in range(self.height):
             print(' ' * self.x + '#' * self.width)
+
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " + \
+               f"{self.width}/{self.height}"
+
     def update(self, *args, **kwargs):
+
         """ update the attributes of the rectangle with arguments"""
         num_arg = len(args)
         if num_arg >= 1:
