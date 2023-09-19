@@ -26,10 +26,21 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ public method that assigns attributes """
-        if args:
+        num_args = len(args)
+
+        if num_args >= 1:
+            self.id = arg[0]
+        if num_args >= 2:
+            self.size = args[1]
+        if num_args >= 3:
+            self.x = args[2]
+        if num_args >= 4:
+            self.y = args[3]
             super().update(*args)
-        elif kwargs:
-            super().update(**kwargs)
+
+        if num_args == 0 or num_args < 4:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def __str__(self):
         """Return a string representation of the Square instance."""
