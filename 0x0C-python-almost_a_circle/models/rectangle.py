@@ -74,7 +74,7 @@ class Rectangle(Base):
             print(' ' * self.x + '#' * self.width)
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update the attributes of the rectangle with arguments"""
         num_arg = len(args)
         if num_arg >= 1:
@@ -87,3 +87,7 @@ class Rectangle(Base):
             self.__x = args[3]
         if num_arg >= 5:
             self.__y = args[4]
+
+        if num_arg == 0 or num_arg < 5:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
