@@ -36,7 +36,6 @@ class Square(Rectangle):
             self.x = args[2]
         if num_args >= 4:
             self.y = args[3]
-            super().update(*args)
 
         if num_args == 0 or num_args < 4:
             for key, value in kwargs.items():
