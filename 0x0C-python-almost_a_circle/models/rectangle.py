@@ -116,3 +116,14 @@ class Rectangle(Base):
         if num_arg == 0 or num_arg < 5:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ a public method that returns the dictionary
+        representation of a Rectangle"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
+            }
