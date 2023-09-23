@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base module"""
 import json
+import csv
 
 
 class Base:
@@ -71,6 +72,42 @@ class Base:
                 dict_list = cls.from_json_string(json_string)
                 for dictionary in dict_list:
                     instance = cls.create(**dictionary)
+                    instance_list.append(instance)
+        except FileNotFoundError:
+            pass
+        return instance_list
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializing and saving to CSV file"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", newline="") as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                if cls.__name__ == "Rectangle":
+                    data = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                elif cls.__name__ == "Square":
+                    data = [obj.id, obj.size, obj.x, obj.y]
+                writer.writerow(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializing and loading from CSV file"""
+        filename = cls.__name__ + ".csv"
+        instance_list = []
+        try:
+            with open(filename, mode="r", newline="") as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        instance = cls(int(row[1]), int(row[2]))
+                        instance.id = int(row[0])
+                        instance.x = int(row[3])
+                        instance.y = int(row[4])
+                    elif cls.__name__ == "Square":
+                        instance = cls(int(row[1]))
+                        instance.id = int(row[0])
+                        instance.x = int(row[2])
+                        instance.y = int(row[3])
                     instance_list.append(instance)
         except FileNotFoundError:
             pass
