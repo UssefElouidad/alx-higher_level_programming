@@ -76,6 +76,7 @@ class Base:
         except FileNotFoundError:
             pass
         return instance_list
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """serializing and saving to CSV file"""
