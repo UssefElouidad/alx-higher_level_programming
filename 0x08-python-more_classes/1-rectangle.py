@@ -8,6 +8,11 @@ class Rectangle:
     highit id the hight of the rectangle
     """
     def __init__(self, width=0, height=0):
+        """ Initialize a rectangle with optional width and height.
+        Args:
+            width (int): The width of the rectangle (default is 0).
+            height (int): The height of the rectangle (default is 0).
+        """
         self.width = width
         self.height = height
 
@@ -17,7 +22,7 @@ class Rectangle:
 
         @width.setter
         def width(self, value):
-            if not isinstance(x, (int)):
+            if not isinstance(value, (int)):
                 raise TypeError("width must be an integer")
             if width < 0:
                 raise ValueError("width must be >= 0")
@@ -29,8 +34,8 @@ class Rectangle:
 
         @height.setter
         def height(self, value):
-            if not isinstance(x, (int)):
+            if not isinstance(value, (int)):
                 raise TypeError("height must be an integer")
             if height < 0:
                 raise ValueError("height must be >= 0")
-            self.width = value
+            self.height = value
