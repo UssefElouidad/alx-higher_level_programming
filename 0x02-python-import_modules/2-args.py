@@ -4,10 +4,10 @@ if __name__ == "__main__":
 
     n = len(sys.argv) - 1
     if n == 0:
-        print("{:d} arguments.".format(n))
+        print("0 arguments.")
     elif n == 1:
-        print("{:d} argument:".format(n))
+        print("1 argument:")
     else:
         print("{} argements:".format(n))
-        for x in range(1, n + 1):
-            print("{:d}: {:s}".format(x, (sys.argv[x])))
+    for x in range(1, n + 1):
+        print("{}: {}".format(x, (sys.argv[x])))
