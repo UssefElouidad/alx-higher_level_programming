@@ -10,4 +10,4 @@ if __name__ == "__main__":
     else:
         print("{} argements:".format(n))
     for x in range(1, n + 1):
-        print("{}: {}".format(x, (sys.argv[x])))
+        print("{}:{}".format(x, (sys.argv[x])))
