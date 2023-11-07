@@ -1,4 +1,3 @@
-7-base_geometry.txt
 The ``7-base_geometry`` module
 ==============================
 
