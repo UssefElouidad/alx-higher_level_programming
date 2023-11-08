@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ task 10 student module """
 
+
 class Student:
     ''' student class'''
     def __init__(self, first_name, last_name, age):

@@ -25,6 +25,7 @@ class Student:
             if key in attrs:
                 my_dict[key] = value
         return my_dict
+
     def reload_from_json(self, json):
         """ replaces all the attributes of the student instance
         with the ones form json """
