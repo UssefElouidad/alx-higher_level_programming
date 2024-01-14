@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-0-select_states.py - A script to connect to a MySQL server, retrieve and display states from the hbtn_0e_0_usa database.
+0-select_states.py - A script to connect to a MySQL server
+retrieve and display states from the hbtn_0e_0_usa database.
 Usage:
     python 0-select_states.py <username> <password> <database>
 Arguments:
@@ -15,9 +16,11 @@ Example:
 import MySQLdb
 import sys
 
+
 def list_states(username, password, database):
     """
-    Connects to a MySQL server and retrieves states from the 'states' table.
+    Connects to a MySQL server and retrieves states from
+    the 'states' table.
 
     Args:
         username (str): MySQL username.
@@ -27,8 +30,14 @@ def list_states(username, password, database):
     Returns:
         None
     """
-    
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database
+    )
     cursor = db.cursor()
 
     # Execute SQL query to retrieve states
@@ -42,6 +51,7 @@ def list_states(username, password, database):
     # Close the cursor and database connection
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     # Get MySQL credentials from command line arguments
