@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import MySQLdb
 import sys
 
@@ -25,7 +26,7 @@ def list_states_starting_with_N(username, password, database):
     cursor = db.cursor()
 
     cursor.execute(
-        "SELECT * FROM states"
+        "SELECT * FROM states "
         "WHERE name LIKE 'N%' "
         "ORDER BY states.id ASC"
     )
