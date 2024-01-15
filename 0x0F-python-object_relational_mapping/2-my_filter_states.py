@@ -27,7 +27,7 @@ def filter_states(username, password, database, state_name):
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC LIMIT 1"
     cursor.execute(query, (state_name,))
     states = cursor.fetchall()
 
