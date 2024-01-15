@@ -28,7 +28,7 @@ def list_states_starting_with_N(username, password, database):
     cursor.execute(
         "SELECT * FROM states "
         "WHERE name LIKE 'N%' "
-        "ORDER BY states.id ASC"
+        "ORDER BY states.id ASC LIMIT 1"
     )
     states = cursor.fetchall()
 
