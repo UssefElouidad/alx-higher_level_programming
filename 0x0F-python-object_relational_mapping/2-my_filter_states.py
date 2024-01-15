@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def filter_states(username, password, database, state_name):
     """
     a script that takes in an argument
@@ -23,11 +24,10 @@ def filter_states(username, password, database, state_name):
         passwd=password,
         db=database
     )
-
-
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC LIMIT 1"
+    query = "SELECT * FROM states WHERE name ="
+    "%s ORDER BY states.id ASC LIMIT 1"
     cursor.execute(query, (state_name,))
     states = cursor.fetchall()
 
@@ -37,11 +37,14 @@ def filter_states(username, password, database, state_name):
     cursor.close()
     db.close()
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: python script.py <username> <password> <database> <state_name>")
+        print("Usage: python script.py <username> <password> <database>"
+              "<state_name>")
         sys.exit(1)
 
-    username, password, database, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    username, password, database, state_name =
+    sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
     filter_states(username, password, database, state_name)
