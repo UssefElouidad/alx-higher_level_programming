@@ -17,6 +17,8 @@ def list_states_starting_with_N(username, password, database):
     Returns:
         None
     """
+
+
 if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
