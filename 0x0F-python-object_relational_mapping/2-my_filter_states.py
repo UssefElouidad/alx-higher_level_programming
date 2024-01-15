@@ -9,13 +9,17 @@ def filter_states(username, password, database, state_name):
     a script that takes in an argument
     and displays all values in the states table
     of hbtn_0e_0_usa where name matches the argument.
-    Args :
-    username (str)
-    password (str)
-    database (str)
-    state_name (str)
+    
+
+    Args:
+        username (str)
+        password (str)
+        database (str)
+        state_name (str)
+    
+
     Returns:
-    None
+           None
     """
     db = MySQLdb.connect(
         host="localhost",
