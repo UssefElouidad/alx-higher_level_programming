@@ -21,6 +21,7 @@ def filter_states(username, password, database, state_name):
     Returns:
         None
     """
+    # Connect to the MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -28,25 +29,32 @@ def filter_states(username, password, database, state_name):
         passwd=password,
         db=database
     )
+    # Create a cursor object to execute SQL queries
     cursor = db.cursor()
 
+    # Define the SQL query with placeholders and execute it
     query = "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC LIMIT 1"
     cursor.execute(query, (state_name,))
+    # Fetch the result and print it
     states = cursor.fetchall()
 
     for state in states:
         print(state)
 
+    # Close the cursor and database connection
     cursor.close()
     db.close()
 
 
 if __name__ == "__main__":
+    # Check if the correct number of command-line arguments is provided
     if len(sys.argv) != 5:
         print("Usage: python script.py <username> <password> <database>"
               "<state_name>")
         sys.exit(1)
 
+    # Extract command-line arguments
     username, password, database, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
+    # Call the filter_states function with the provided arguments
     filter_states(username, password, database, state_name)
