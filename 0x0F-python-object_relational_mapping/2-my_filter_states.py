@@ -6,20 +6,20 @@ import sys
 
 def filter_states(username, password, database, state_name):
     """
-    a script that takes in an argument
+    A script that takes in an argument
     and displays all values in the states table
     of hbtn_0e_0_usa where name matches the argument.
     
 
     Args:
-        username (str)
-        password (str)
-        database (str)
-        state_name (str)
+        username (str): MySQL username.
+        password (str): MySQL password.
+        database (str): MySQL database name.
+        state_name (str): The name of the state to search for.
     
 
     Returns:
-           None
+        None
     """
     db = MySQLdb.connect(
         host="localhost",
